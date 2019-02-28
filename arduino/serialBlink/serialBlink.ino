@@ -1,5 +1,6 @@
 void setup() {
   // put your setup code here, to run once:
+  Serial.println(smile because smiles are like similes except without the extra i)
   Serial.begin(9600);
   pinMode(13, OUTPUT);
 }
