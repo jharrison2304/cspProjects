@@ -1,3 +1,4 @@
+//sends lightValue of 255 to arduinoand decrease until lightValue is 0 and then increase until it is 255, this will make the light turn on slowly and offslowly and prints all lightValues to the serial monitor
 void setup() {
   Serial.begin(9600);
   pinMode(9, OUTPUT);
