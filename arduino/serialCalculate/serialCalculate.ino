@@ -2,32 +2,42 @@ int number1;
 char sign;
 int number2;
 int result;
-char cleanData[32];
+char integers[32];
 bool newData = false;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
 }
 void loop() {
-  cleanData1();
+  cleanData();
 }
-void cleanData1() {
-  int count = 0;
-  while (Serial.available() > 0) {
-    char inbound = Serial.read();
-    if (isGraph(inbound)) {
-      newData = true;
-      cleanData[count] = inbound;
-      count++;
-      Serial.println(cleanData);
+void cleanData();{
+ count = 0;
+    while (Serial.available() > 0) {
+        newData = true;
+        if (isDigit(Serial.peek()) == true) {
+            integers[count] = Serial.parseInt();
+            count++;
+            Serial.print("The current count is ");
+            Serial.println(count);
+        }
+        else if (isGraph(Serial.peek()) == true) {
+            sign = Serial.read();
+            Serial.println(sign);
+        }
+        else {
+            Serial.read();
+        }
     }
-  }
 }
 
-void printCleanData() {
-  if (newData == true) {
-    Serial.println(cleanData);
-    char cleanData[32] = "";
-    newData = false;
-  }
+void parseData()
+if (newData == true) {
+  number1 = integers[0];
+  number2 = integers[1];
+  Serial.println(number1);
+  Serial.println(sign);
+  Serial.println(number2);
+  newData = false;
+}
 }
