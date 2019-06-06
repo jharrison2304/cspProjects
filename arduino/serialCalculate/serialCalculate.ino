@@ -5,12 +5,16 @@ int result;
 char integers[32];
 bool newData = false;
 int count;
+bool readyToCalculate = false;
 void setup() {
   // put your setup code here, to run once:
   Serial.begin(9600);
 }
 void loop() {
   cleanData();
+  cleanData();
+  parseData();
+  calculate();
 }
 void cleanData() {
   count = 0;
@@ -43,5 +47,14 @@ void parseData() {
     Serial.println(sign);
     Serial.println(number2);
     newData = false;
+
+  }
+}
+void calculate() {
+  if (readyToCalculate == true) {
+    Serial.println("true") ;
+  }
+  if (readyToCalculate == false) {
+  Serial.println("false");
   }
 }
