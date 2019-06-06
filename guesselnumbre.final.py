@@ -6,10 +6,12 @@ print('Hello! What is your name?')
 Name = raw_input()
 
 print("Well, " + Name + ", I am thinking of a number between 1 and 500.")
-print("Take a guess, you have 10.")
+print("Take a guess, you have 9.")
 
 while numbreofguess < 9:
     guess = input()
+if guess.isdigit == false:
+    print("not a valid option, type a digit")
     guess = int(guess)
     numbreofguess = numbreofguess + 1
     guessesleft = 9 - numbreofguess
@@ -30,3 +32,5 @@ if guess != numbre:
     numbre=str(numbre)
     print("Nope. The number I was thinking of was " + numbre)
 
+##if guess != int
+    ##print("not a valid option, guess a number")
